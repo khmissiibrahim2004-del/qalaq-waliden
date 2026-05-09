@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>قلق الوالدين في رحلة شفاء طفلهما</title>
+<title>صحتكم هي أولويتنا — قلق الوالدين في رحلة شفاء طفلهما</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
@@ -43,16 +43,11 @@ body{font-family:'Cairo','Tajawal',sans-serif;background:var(--soft);color:var(-
 
 #progress{position:fixed;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,var(--teal-l),var(--gold-l));z-index:999;transform-origin:right;transform:scaleX(0);transition:transform .08s}
 
-#sdots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:16px;z-index:300}
-.sdot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18);transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;position:relative;border:none;padding:0}
-.sdot:hover,.sdot.active{background:var(--teal-l);transform:scale(1.6);box-shadow:0 0 12px var(--teal-l)}
-.sdot::before{content:attr(data-label);position:absolute;right:26px;top:50%;transform:translateY(-50%) translateX(10px);white-space:nowrap;font-size:.75rem;font-family:'Cairo',sans-serif;color:#fff;background:rgba(4,13,27,.88);backdrop-filter:blur(12px);padding:6px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.14);opacity:0;pointer-events:none;transition:all .25s;direction:rtl}
-.sdot:hover::before{opacity:1;transform:translateY(-50%) translateX(0)}
-@media(max-width:900px){#sdots{display:none}}
+
 
 nav{position:fixed;top:0;right:0;left:0;z-index:200;padding:16px 36px;display:flex;justify-content:space-between;align-items:center;transition:all .4s}
 nav.scrolled{background:rgba(4,13,27,.96);backdrop-filter:blur(30px);box-shadow:0 6px 40px rgba(0,0,0,.3)}
-.nav-brand{color:#fff;font-size:1rem;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:-.02em}
+.nav-brand{color:#fff;font-size:.88rem;font-weight:900;display:flex;align-items:center;gap:10px;text-decoration:none;letter-spacing:-.02em}
 .nav-dot{width:10px;height:10px;background:var(--teal-l);border-radius:50%;animation:ndPulse 2.5s infinite;box-shadow:0 0 10px var(--teal-l)}
 @keyframes ndPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
 .nav-links{display:flex;gap:26px;list-style:none}
@@ -75,7 +70,8 @@ nav.scrolled{background:rgba(4,13,27,.96);backdrop-filter:blur(30px);box-shadow:
 .nurse-mascot:hover{transform:scale(1.1)}
 @keyframes mascotFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .mascot-bubble{position:absolute;bottom:120%;left:0;background:#fff;border-radius:18px;padding:16px 20px;box-shadow:var(--sh);min-width:260px;font-size:.82rem;color:var(--mid);font-weight:600;line-height:1.7;opacity:0;transform:translateY(10px) scale(.9);transition:all .35s cubic-bezier(.4,0,.2,1);pointer-events:none;border:1px solid var(--border);z-index:400}
-.mascot-bubble.show{opacity:1;transform:translateY(0) scale(1)}
+.mascot-msg{display:block;margin-bottom:2px}
+.mascot-bubble.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 .mascot-bubble::after{content:'';position:absolute;bottom:-8px;left:30px;width:16px;height:16px;background:#fff;transform:rotate(45deg);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
 .mascot-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .mascot-btn,.emergency-btn{background:linear-gradient(135deg,var(--teal),var(--teal-l));color:#fff;border:none;border-radius:50px;padding:8px 16px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:'Cairo',sans-serif;transition:all .3s}
@@ -496,16 +492,7 @@ footer p strong{color:rgba(255,255,255,.8)}
 
 <div id="progress"></div>
 
-<nav id="sdots" aria-label="تنقل الأقسام">
-  <button class="sdot active" data-section="hero" data-label="البداية" onclick="scrollTo({top:0,behavior:'smooth'})"></button>
-  <button class="sdot" data-section="who" data-label="من نحن" onclick="document.getElementById('who').scrollIntoView({behavior:'smooth'})"></button>
-  <button class="sdot" data-section="why" data-label="البحث" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})"></button>
-  <button class="sdot" data-section="results" data-label="النتائج" onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})"></button>
-  <button class="sdot" data-section="causes" data-label="أسباب القلق" onclick="document.getElementById('causes').scrollIntoView({behavior:'smooth'})"></button>
-  <button class="sdot" data-section="tips" data-label="نصائح" onclick="document.getElementById('tips').scrollIntoView({behavior:'smooth'})"></button>
-  <button class="sdot" data-section="nurse" data-label="دور الممرض" onclick="document.getElementById('nurse').scrollIntoView({behavior:'smooth'})"></button>
-  <button class="sdot" data-section="ai" data-label="مساعدة" onclick="document.getElementById('ai').scrollIntoView({behavior:'smooth'})"></button>
-</nav>
+
 
 <div class="nav-mobile" id="navMobile">
   <a href="#who" onclick="closeMenu()">من نحن</a>
@@ -518,7 +505,7 @@ footer p strong{color:rgba(255,255,255,.8)}
 </div>
 
 <nav id="navbar">
-  <div class="nav-brand"><span class="nav-dot"></span>نحن ندعمكم دوما...</div>
+  <div class="nav-brand"><span class="nav-dot"></span>صحتكم هي أولويتنا 💙</div>
   <ul class="nav-links">
     <li><a href="#who">من نحن</a></li>
     <li><a href="#why">البحث</a></li>
@@ -552,9 +539,9 @@ footer p strong{color:rgba(255,255,255,.8)}
     <path d="M70 25 C70 20 75 20 75 25 C75 20 80 20 80 25 C80 30 75 35 75 35 C75 35 70 30 70 25Z" fill="#e0527a" style="animation:ldHeart 1.2s infinite"/>
   </svg>
   <div class="mascot-bubble" id="mascotBubble">
-    💬 أنتِ تبذلين جهدًا رائعًا! طفلكِ يشعر بحبكِ.
+    <span class="mascot-msg">💬 أنتِ تبذلين جهدًا رائعًا! طفلكِ يشعر بحبكِ.</span>
     <div class="mascot-actions">
-      <button class="mascot-btn rose" onclick="event.stopPropagation();toggleMascot()">❌ إغلاق</button>
+      <button class="mascot-btn rose" onclick="event.stopPropagation();document.getElementById('mascotBubble').classList.remove('show')">✕ إغلاق</button>
     </div>
   </div>
 </div>
@@ -580,33 +567,130 @@ footer p strong{color:rgba(255,255,255,.8)}
 
   <div class="hero-illust-wrap" aria-hidden="true">
     <svg viewBox="0 0 420 520" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <circle cx="210" cy="260" r="190" stroke="rgba(21,197,216,0.08)" stroke-width="1.5" stroke-dasharray="6 6"/>
-      <circle cx="210" cy="260" r="150" stroke="rgba(21,197,216,0.06)" stroke-width="1" stroke-dasharray="2 8"/>
-      <ellipse cx="210" cy="280" rx="130" ry="110" fill="rgba(21,197,216,0.06)"/>
-      <rect x="85" y="380" width="280" height="14" rx="7" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <rect x="85" y="330" width="280" height="56" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-      <rect x="95" y="394" width="8" height="38" rx="4" fill="rgba(255,255,255,0.05)"/>
-      <rect x="357" y="394" width="8" height="38" rx="4" fill="rgba(255,255,255,0.05)"/>
-      <line x1="370" y1="220" x2="370" y2="385" stroke="rgba(255,255,255,0.12)" stroke-width="3" stroke-linecap="round"/>
-      <rect x="358" y="218" width="20" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
-      <path d="M368 224 Q364 200 372 190 Q380 180 382 200 Q386 218 376 226 Z" fill="rgba(21,197,216,0.3)" stroke="rgba(21,197,216,0.5)" stroke-width="1.2"/>
-      <path d="M105 450 Q100 410 106 378 Q112 344 128 324 Q148 300 162 315 Q172 330 168 370 Q164 410 167 444 L135 452 Z" fill="rgba(21,197,216,0.28)" stroke="rgba(21,197,216,0.45)" stroke-width="1.5"/>
-      <circle cx="136" cy="308" r="28" fill="rgba(21,197,216,0.28)" stroke="rgba(21,197,216,0.45)" stroke-width="1.5"/>
-      <path d="M112 298 Q136 277 160 298" stroke="rgba(21,197,216,0.65)" stroke-width="3" stroke-linecap="round"/>
-      <path d="M162 340 Q206 308 266 328 Q288 338 300 350" stroke="rgba(21,197,216,0.35)" stroke-width="16" stroke-linecap="round"/>
-      <circle cx="302" cy="352" r="14" fill="rgba(240,180,41,0.25)" stroke="rgba(240,180,41,0.45)" stroke-width="1.5"/>
-      <ellipse cx="230" cy="342" rx="82" ry="22" fill="rgba(240,180,41,0.06)"/>
-      <path d="M148 272 C148 267.5 153.5 263 153.5 267.5 C153.5 263 159 267.5 159 272 Q159 278.5 153.5 283 Q148 278.5 148 272Z" fill="rgba(240,180,41,0.75)" transform="rotate(-9 153 273)"/>
-      <path d="M124 244 C124 240.8 128.5 237 128.5 240.8 C128.5 237 133 240.8 133 244 Q133 249 128.5 252.5 Q124 249 124 244Z" fill="rgba(240,180,41,0.55)" transform="rotate(5 128 245)"/>
-      <path d="M324 176 L327 168 L330 176 L338 179 L330 182 L327 190 L324 182 L316 179 Z" fill="rgba(240,180,41,0.65)"/>
-      <path d="M62 214 L64 209 L66 214 L71 216 L66 218 L64 223 L62 218 L57 216 Z" fill="rgba(255,255,255,0.3)"/>
-      <path d="M385 312 L387 308 L389 312 L393 314 L389 316 L387 320 L385 316 L381 314 Z" fill="rgba(240,180,41,0.5)"/>
-      <circle cx="56" cy="291" r="4" fill="rgba(21,197,216,0.5)"/>
-      <circle cx="400" cy="258" r="3" fill="rgba(240,180,41,0.6)"/>
-      <circle cx="193" cy="186" r="4.5" fill="rgba(21,197,216,0.35)"/>
-      <circle cx="353" cy="216" r="3" fill="rgba(255,255,255,0.22)"/>
-      <circle cx="77" cy="366" r="2.5" fill="rgba(240,180,41,0.45)"/>
-      <path d="M181 212 h8 v-8 h6 v8 h8 v6 h-8 v8 h-6 v-8 h-8 Z" fill="rgba(21,197,216,0.22)" stroke="rgba(21,197,216,0.38)" stroke-width="0.5"/>
+      <!-- Soft ambient rings -->
+      <circle cx="210" cy="270" r="185" stroke="rgba(21,197,216,0.07)" stroke-width="1.5" stroke-dasharray="5 8"/>
+      <circle cx="210" cy="270" r="145" stroke="rgba(21,197,216,0.05)" stroke-width="1" stroke-dasharray="2 10"/>
+      <ellipse cx="210" cy="290" rx="125" ry="105" fill="rgba(21,197,216,0.04)"/>
+
+      <!-- Hospital bed base -->
+      <rect x="80" y="320" width="270" height="18" rx="9" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+      <rect x="90" y="336" width="8" height="36" rx="4" fill="rgba(255,255,255,0.07)"/>
+      <rect x="320" y="336" width="8" height="36" rx="4" fill="rgba(255,255,255,0.07)"/>
+      <!-- Bed frame body -->
+      <rect x="82" y="288" width="266" height="36" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+      <!-- White sheet/blanket -->
+      <path d="M88 292 Q210 280 332 292 L338 318 Q210 325 82 318 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+      <!-- Pillow -->
+      <ellipse cx="305" cy="290" rx="38" ry="13" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+
+      <!-- Child in bed -->
+      <circle cx="305" cy="270" r="22" fill="rgba(255,210,175,0.9)" stroke="rgba(230,170,110,0.5)" stroke-width="1.5"/>
+      <!-- Child hair -->
+      <path d="M284 263 Q305 248 326 263 Q322 252 305 249 Q288 252 284 263Z" fill="rgba(70,45,20,0.65)"/>
+      <!-- Child face details -->
+      <ellipse cx="299" cy="269" rx="2.5" ry="2" fill="rgba(50,30,10,0.75)"/>
+      <ellipse cx="311" cy="269" rx="2.5" ry="2" fill="rgba(50,30,10,0.75)"/>
+      <!-- Closed eyes (sleeping/resting) lines -->
+      <path d="M296 268 Q299 271 302 268" stroke="rgba(50,30,10,0.6)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+      <path d="M308 268 Q311 271 314 268" stroke="rgba(50,30,10,0.6)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+      <!-- Child small smile -->
+      <path d="M300 278 Q305 282 310 278" stroke="rgba(190,90,90,0.65)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <!-- Child arm peeking from blanket -->
+      <path d="M285 306 Q278 296 276 288" stroke="rgba(255,210,175,0.75)" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+      <!-- IV drip stand -->
+      <line x1="358" y1="165" x2="358" y2="335" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="345" y1="165" x2="371" y2="165" stroke="rgba(255,255,255,0.15)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- IV bag (tear-drop shape) -->
+      <path d="M354 172 Q350 148 358 138 Q366 128 368 152 Q372 172 362 178 Z" fill="rgba(21,197,216,0.45)" stroke="rgba(21,197,216,0.65)" stroke-width="1.2"/>
+      <!-- IV tube down to child arm -->
+      <path d="M360 178 Q358 210 354 248 Q348 270 276 288" stroke="rgba(21,197,216,0.35)" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="4 3"/>
+
+      <!-- Heart rate monitor screen -->
+      <rect x="50" y="228" width="72" height="52" rx="8" fill="rgba(4,13,27,0.7)" stroke="rgba(21,197,216,0.4)" stroke-width="1.5"/>
+      <!-- Heartbeat wave -->
+      <path d="M56 254 L63 254 L67 242 L73 266 L80 244 L87 258 L92 252 L100 252 L114 252" stroke="rgba(21,197,216,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- Small red cross on monitor corner -->
+      <path d="M113 230 h4 v-4 h3 v4 h4 v3 h-4 v4 h-3 v-4 h-4Z" fill="rgba(197,48,84,0.8)"/>
+
+      <!-- MOTHER figure (sitting left of bed) -->
+      <!-- Chair seat -->
+      <rect x="55" y="318" width="54" height="9" rx="4.5" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+      <rect x="58" y="327" width="6" height="40" rx="3" fill="rgba(255,255,255,0.07)"/>
+      <rect x="99" y="327" width="6" height="40" rx="3" fill="rgba(255,255,255,0.07)"/>
+      <!-- Mother body (warm golden/orange tone gown) -->
+      <path d="M72 300 Q84 290 100 300 L106 352 Q84 360 66 352 Z" fill="rgba(240,160,40,0.38)" stroke="rgba(240,160,40,0.55)" stroke-width="1.5"/>
+      <!-- Mother head -->
+      <circle cx="84" cy="273" r="23" fill="rgba(255,210,175,0.9)" stroke="rgba(230,170,110,0.5)" stroke-width="1.5"/>
+      <!-- Mother hair / headscarf -->
+      <path d="M61 268 Q65 248 84 245 Q103 248 107 268 Q103 252 84 250 Q65 252 61 268Z" fill="rgba(60,40,20,0.6)"/>
+      <path d="M61 268 Q60 280 65 290 Q70 298 72 300" stroke="rgba(60,40,20,0.5)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <!-- Mother face: concerned but loving expression -->
+      <ellipse cx="78" cy="273" rx="2.5" ry="2.2" fill="rgba(50,30,10,0.75)"/>
+      <ellipse cx="90" cy="273" rx="2.5" ry="2.2" fill="rgba(50,30,10,0.75)"/>
+      <!-- Slight gentle eyebrows -->
+      <path d="M75 268 Q78 266 81 267" stroke="rgba(50,30,10,0.5)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+      <path d="M87 267 Q90 266 93 268" stroke="rgba(50,30,10,0.5)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+      <path d="M80 280 Q84 283 88 280" stroke="rgba(150,80,80,0.55)" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+      <!-- Mother arm stretched to hold child's hand -->
+      <path d="M100 315 Q170 295 276 288" stroke="rgba(255,210,175,0.55)" stroke-width="6.5" stroke-linecap="round" fill="none"/>
+      <!-- Hand holding child's hand glow -->
+      <circle cx="276" cy="288" r="8" fill="rgba(240,160,40,0.2)" stroke="rgba(240,160,40,0.35)" stroke-width="1"/>
+
+      <!-- NURSE figure (standing, right-center) -->
+      <!-- Nurse legs -->
+      <rect x="184" y="430" width="10" height="42" rx="5" fill="rgba(21,197,216,0.45)"/>
+      <rect x="202" y="430" width="10" height="42" rx="5" fill="rgba(21,197,216,0.45)"/>
+      <!-- Shoes -->
+      <ellipse cx="189" cy="473" rx="10" ry="5" fill="rgba(255,255,255,0.3)"/>
+      <ellipse cx="207" cy="473" rx="10" ry="5" fill="rgba(255,255,255,0.3)"/>
+      <!-- Nurse body/uniform (teal) -->
+      <path d="M172 348 Q196 336 218 348 L226 432 Q196 442 166 432 Z" fill="rgba(21,197,216,0.6)" stroke="rgba(21,197,216,0.8)" stroke-width="1.5"/>
+      <!-- White lab coat lapels -->
+      <path d="M183 348 L196 360 L209 348" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" fill="rgba(255,255,255,0.06)"/>
+      <!-- Nurse ID badge -->
+      <rect x="188" y="370" width="20" height="14" rx="3" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+      <line x1="192" y1="374" x2="204" y2="374" stroke="rgba(21,197,216,0.6)" stroke-width="1"/>
+      <line x1="192" y1="378" x2="200" y2="378" stroke="rgba(21,197,216,0.4)" stroke-width="0.8"/>
+      <!-- Nurse head -->
+      <circle cx="196" cy="312" r="26" fill="rgba(255,210,175,0.9)" stroke="rgba(230,170,110,0.5)" stroke-width="1.5"/>
+      <!-- Nurse cap -->
+      <path d="M174 300 Q196 287 218 300 L214 308 L196 298 L178 308 Z" fill="rgba(255,255,255,0.88)" stroke="rgba(200,215,230,0.6)" stroke-width="1"/>
+      <!-- Red cross on cap -->
+      <path d="M193 294 h6 v-5 h3 v5 h6 v3 h-6 v5 h-3 v-5 h-6Z" fill="rgba(197,48,84,0.85)"/>
+      <!-- Nurse face (warm, smiling) -->
+      <ellipse cx="190" cy="312" rx="2.8" ry="2.5" fill="rgba(50,30,10,0.75)"/>
+      <ellipse cx="202" cy="312" rx="2.8" ry="2.5" fill="rgba(50,30,10,0.75)"/>
+      <path d="M188 320 Q196 326 204 320" stroke="rgba(180,80,80,0.65)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      <!-- Slight warm cheeks -->
+      <ellipse cx="185" cy="317" rx="5" ry="3" fill="rgba(220,120,100,0.2)"/>
+      <ellipse cx="207" cy="317" rx="5" ry="3" fill="rgba(220,120,100,0.2)"/>
+      <!-- Nurse left arm extended toward mother (comforting gesture) -->
+      <path d="M172 380 Q138 355 108 330" stroke="rgba(21,197,216,0.55)" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- Comforting hand on mother's shoulder -->
+      <circle cx="108" cy="330" r="9" fill="rgba(21,197,216,0.25)" stroke="rgba(21,197,216,0.4)" stroke-width="1"/>
+      <!-- Nurse right arm (clipboard) -->
+      <path d="M220 375 Q238 350 242 332" stroke="rgba(21,197,216,0.5)" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <!-- Clipboard -->
+      <rect x="234" y="320" width="24" height="32" rx="5" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.38)" stroke-width="1.2"/>
+      <line x1="239" y1="329" x2="253" y2="329" stroke="rgba(21,197,216,0.65)" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="239" y1="335" x2="253" y2="335" stroke="rgba(21,197,216,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="239" y1="341" x2="248" y2="341" stroke="rgba(21,197,216,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+
+      <!-- Floating hearts (decorative) -->
+      <path d="M138 210 C138 205.5 143.5 201 143.5 205.5 C143.5 201 149 205.5 149 210 Q149 217 143.5 222 Q138 217 138 210Z" fill="rgba(197,48,84,0.6)" transform="rotate(-9 143 211)"/>
+      <path d="M252 175 C252 172 255.5 169 255.5 172 C255.5 169 259 172 259 175 Q259 179.5 255.5 183 Q252 179.5 252 175Z" fill="rgba(240,160,40,0.55)" transform="rotate(6 255 176)"/>
+      <path d="M370 210 C370 207 373.5 204 373.5 207 C373.5 204 377 207 377 210 Q377 214.5 373.5 218 Q370 214.5 370 210Z" fill="rgba(197,48,84,0.45)" transform="rotate(-5 373 211)"/>
+
+      <!-- Medical cross (top accent) -->
+      <path d="M194 148 h8 v-8 h6 v8 h8 v6 h-8 v8 h-6 v-8 h-8Z" fill="rgba(21,197,216,0.22)" stroke="rgba(21,197,216,0.4)" stroke-width="0.5"/>
+
+      <!-- Star sparkles -->
+      <path d="M365 155 L367 149 L369 155 L375 157 L369 159 L367 165 L365 159 L359 157Z" fill="rgba(240,180,41,0.55)"/>
+      <path d="M58 190 L60 185 L62 190 L67 192 L62 194 L60 199 L58 194 L53 192Z" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="155" cy="155" r="3.5" fill="rgba(21,197,216,0.45)"/>
+      <circle cx="380" cy="330" r="2.5" fill="rgba(240,180,41,0.5)"/>
+      <circle cx="55" cy="255" r="3" fill="rgba(21,197,216,0.35)"/>
     </svg>
   </div>
 
@@ -1131,7 +1215,8 @@ function toggleMascot(){
   if(b.classList.contains('show')){
     b.classList.remove('show');
   }else{
-    b.innerHTML=mascotMsgs[mascotIdx]+'<div class="mascot-actions"><button class="mascot-btn" onclick="event.stopPropagation();showEmergency()">🆘 أحتاج مساعدة</button><button class="mascot-btn rose" onclick="event.stopPropagation();toggleMascot()">❌ إغلاق</button></div>';
+    const msgEl=b.querySelector('.mascot-msg');
+    if(msgEl){ msgEl.textContent=mascotMsgs[mascotIdx]; }
     mascotIdx=(mascotIdx+1)%mascotMsgs.length;
     b.classList.add('show');
     setTimeout(()=>b.classList.remove('show'),6000);
@@ -1153,20 +1238,7 @@ window.addEventListener('scroll',()=>{
   prog.style.transform=`scaleX(${p})`;
   nav.classList.toggle('scrolled',window.scrollY>60);
   backToTop.classList.toggle('show',window.scrollY>500);
-  updateSectionDots();
 },{ passive:true });
-
-const sectIds=['hero','who','why','results','causes','tips','nurse','ai'];
-function updateSectionDots(){
-  const dots=document.querySelectorAll('#sdots .sdot');
-  const mid=window.scrollY+window.innerHeight/2;
-  let active=0;
-  sectIds.forEach((id,i)=>{
-    const el=document.getElementById(id);
-    if(el&&el.offsetTop<=mid) active=i;
-  });
-  dots.forEach((d,i)=>d.classList.toggle('active',i===active));
-}
 
 const pc=document.getElementById('particles');
 for(let i=0;i<25;i++){
